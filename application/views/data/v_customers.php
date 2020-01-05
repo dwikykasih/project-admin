@@ -4,12 +4,12 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Pengajuan Angsuran</h1>
-
+          <h1 class="h3 mb-2 text-gray-800">Daftar Pelanggan</h1>
+          
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel Pengajuan Angsuran</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabel Pelanggan</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -17,9 +17,9 @@
                   <thead>
                     <tr>
                       <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
+                      <th>Email</th>
+                      <th>HP</th>
+                      <th>Tanggal Daftar</th>
                       <th>Aksi</th>
                       
                     </tr>
@@ -27,36 +27,34 @@
                   <tfoot>
                     <tr>
                       <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
+                      <th>Email</th>
+                      <th>HP</th>
+                      <th>Tanggal Daftar</th>
                       <th>Aksi</th>
-
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
                       <td>Tiger Nixon</td>
-                      <td>Sound System</td>
-                      <td>24-02-2012</td>
-                      <td>Sudah Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
+                      <td>tiger@gmail.com</td>
+                      <td>628963448802</td>
+                      <td>21-12-2012</td>
+                      <td><a href="<?= base_url('admin/detail_customers');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
                     </tr>
                     <tr>
                       <td>Garrett Winters</td>
-                      <td>Helm</td>
-                      <td>17-12-2014</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
+                      <td>garrett@yahoo.com</td>
+                      <td>62817122014</td>
+                      <td>21-12-2012</td>
+                      <td><a href="<?= base_url('admin/detail_customers');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
                       
                     </tr>
                     <tr>
                       <td>Ashton Cox</td>
-                      <td>Ear buds</td>
+                      <td>ashton@student.itera.ac.id</td>
+                      <td>624367887827</td>
                       <td>21-12-2012</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
+                      <td><a href="<?= base_url('admin/detail_customers');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
                       
                     </tr>
                     

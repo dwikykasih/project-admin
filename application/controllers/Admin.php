@@ -42,4 +42,30 @@ class Admin extends CI_Controller {
 		$this->load->view('templates/v_navbar');
 		$this->load->view('kelola/v_detail_asp');
 	}
+
+	public function customers()
+	{
+		$this->load->view('templates/v_header');
+		$this->load->view('templates/v_sidebar');
+		$this->load->view('templates/v_navbar');
+		$this->load->view('data/v_customers');
+	}
+
+	public function detail_customers()
+	{
+		$this->load->view('templates/v_header');
+		$this->load->view('templates/v_sidebar');
+		$this->load->view('templates/v_navbar');
+		$this->load->view('data/v_detail_customers');
+	}
+
+	public function daftar_asp()
+	{
+		$this->load->view('templates/v_header');
+		$this->load->view('templates/v_sidebar');
+		$this->load->view('templates/v_navbar');
+		$this->load->view('data/v_asp');
+	}
 }
+
+

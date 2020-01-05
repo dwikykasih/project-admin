@@ -1,5 +1,5 @@
 <div class="m-3">
-<h1>Detail ASP</h1>
+<h1>Detail Pelanggan</h1>
 <hr></div>
 <div class="card mb-4 m-3">
   <div class="card-header">
@@ -13,7 +13,7 @@
             <div class="col">
                 
                 <p>
-                	<b>&nbsp ID ASP</b>
+                	<b>&nbsp ID PelangganP</b>
                 </p>
                 <p>
                 	<b>&nbsp Nama Lengkap</b>
@@ -43,7 +43,7 @@
                     <b>&nbsp Universitas</b>
                 </p>
                 <p>
-                    <b>&nbsp Semester</b>
+                    <b>&nbsp Tahun Masuk</b>
                 </p>
                 <p>
                     <b>&nbsp Program Studi</b>
@@ -60,11 +60,6 @@
                         <b>&nbsp Keterangan Aktif (KTM)</b><br>
                         <button class="btn btn-primary m-2">Lihat KTM</button>
                     </p>
-                    
-                    <p>
-                        <b>&nbsp CV</b><br>
-                        <button class="btn btn-primary m-2">Lihat CV</button>
-                    </p>
 
                     <p>
                         <b>&nbsp Transkrip Nilai</b><br>
@@ -72,27 +67,6 @@
                     </p>
             </div>
         </div>
-   
-    <br>
-    <p>
-    	<i class="fa fa-check-circle"></i>
-    	 Status ASP <br>
-    	<button class="btn btn-success m-2">Menunggu verifikasi</button>
-    	<button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Ubah status</button>
-    </p>
-    <p>
-        <i class="fa fa-check-circle"></i>
-         Generate Password</b><br>
-    	<button class="btn btn-danger m-2"><i class=""></i> Generate</button>
-    </p>
-    <p>
-        <b>&nbsp Username:</b>
-    </p>
-    <p>
-        <b>&nbsp Password:</b>
-    </p>
-	</div>
-
 </div>
 
 

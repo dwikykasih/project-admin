@@ -6,73 +6,79 @@
     Detail : Lihat dengan detail dan tentukan status pengajuan produk di bagian bawah
   </div>
   <div class="card-body">
-    <p><i class="fa fa-address-card"></i>
-    	 Identitas Mahasiswa
+    <div class="row">
+        <div class="col">
+    <p>
+        <i class="fa fa-address-card"></i>
+         Identitas Mahasiswa
     </p>
     <p>
-    	<b>&nbsp ID Pelanggan</b>
+        <b>&nbsp ID Pelanggan</b>
     </p>
     <p>
-    	<b>&nbsp Nama Lengkap</b>
+        <b>&nbsp Nama Lengkap</b>
     </p>
     <p>
-    	<b>&nbsp HP</b>
+        <b>&nbsp HP</b>
     </p>
     <p>
-    	<b>&nbsp Email</b>
+        <b>&nbsp Email</b>
     </p>
     <p>
-    	<b>&nbsp Tanggal Lahir</b>
+        <b>&nbsp Tanggal Lahir</b>
     </p>
     <p>
-    	<b>&nbsp No. Whatsapp</b>
-    </p>
-    <br>
+        <b>&nbsp No. Whatsapp</b>
+    </p></div>
+        <div class="col">
     <p>
-    	<i class="fa fa-archive"></i>
-    	 Identitas Produk
-    </p>
-    <p>
-    	<b>&nbsp Nama Barang</b>
+        <i class="fa fa-archive"></i>
+         Identitas Produk
     </p>
     <p>
-    	<b>&nbsp Harga</b>
+        <b>&nbsp Nama Barang</b>
     </p>
     <p>
-    	<b>&nbsp Deskripsi</b>
+        <b>&nbsp Harga</b>
     </p>
     <p>
-    	<b>&nbsp Link</b>
+        <b>&nbsp Deskripsi</b>
+    </p>
+    <p>
+        <b>&nbsp Link</b>
     </p>  
-    <br>
+        </div>
+        <div class="col">
     <p>
-    	<i class="fa fa-info"></i>
-    	 Detail Angsuran
+        <i class="fa fa-info"></i>
+         Detail Angsuran
     </p>
     <p>
-    	<b>&nbsp Jumlah Barang</b>
+        <b>&nbsp Jumlah Barang</b>
     </p>
     <p>
-    	<b>&nbsp Uang Muka</b>
+        <b>&nbsp Uang Muka</b>
     </p>
     <p>
-    	<b>&nbsp Angsuran</b>
+        <b>&nbsp Angsuran</b>
     </p>
     <p>
-    	<b>&nbsp Margin</b>
+        <b>&nbsp Margin</b>
     </p>
     <p>
-    	<b>&nbsp Jangka Waktu</b>
+        <b>&nbsp Jangka Waktu</b>
     </p>
     <p>
-    	<b>&nbsp Catatan Penjual</b>
+        <b>&nbsp Catatan Penjual</b>
     </p>
     <p>
-    	<b>&nbsp Kode Voucher</b>
+        <b>&nbsp Kode Voucher</b>
     </p>
     <p>
-    	<b>&nbsp Nilai Voucher</b>
+        <b>&nbsp Nilai Voucher</b>
     </p>
+        </div>
+    </div>
     <br>
 
     <p>

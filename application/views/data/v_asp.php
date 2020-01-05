@@ -4,12 +4,12 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Pengajuan Angsuran</h1>
-
+          <h1 class="h3 mb-2 text-gray-800">Daftar Angsur Student Partner</h1>
+          
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel Pengajuan Angsuran</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabel ASP</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -17,9 +17,9 @@
                   <thead>
                     <tr>
                       <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
+                      <th>Email</th>
+                      <th>HP</th>
+                      <th>Tanggal Daftar</th>
                       <th>Aksi</th>
                       
                     </tr>
@@ -27,37 +27,19 @@
                   <tfoot>
                     <tr>
                       <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
+                      <th>Email</th>
+                      <th>HP</th>
+                      <th>Tanggal Daftar</th>
                       <th>Aksi</th>
-
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>Sound System</td>
-                      <td>24-02-2012</td>
-                      <td>Sudah Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Helm</td>
-                      <td>17-12-2014</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Ear buds</td>
+                      <td>Ashley Graham</td>
+                      <td>ashley@gmail.com</td>
+                      <td>628964587689</td>
                       <td>21-12-2012</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
+                      <td><a href="<?= base_url('admin/detail_asp');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
                     </tr>
                     
                   </tbody>
