@@ -35,7 +35,7 @@
           <div class="py-2 collapse-inner bg-dark rounded">
             <h6 class="collapse-header text-light">Komponen:</h6>
             <a class="collapse-item text-white" href="<?= base_url('admin/pengajuan')?>">Pengajuan Angsuran</a>
-            <a class="collapse-item text-white" href="cards.html">Angsur Student Partner</a>
+            <a class="collapse-item text-white" href="<?= base_url('admin/asp')?>">Angsur Student Partner</a>
           </div>
         </div>
       </li>

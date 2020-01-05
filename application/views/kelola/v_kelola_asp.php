@@ -18,8 +18,7 @@
                   <thead>
                     <tr>
                       <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
+                      <th>Universitas</th>
                       <th>Status</th>
                       <th>Aksi</th>
                       
@@ -28,36 +27,31 @@
                   <tfoot>
                     <tr>
                       <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
+                      <th>Universitas</th>
                       <th>Status</th>
                       <th>Aksi</th>
-
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>Sound System</td>
-                      <td>24-02-2012</td>
-                      <td>Sudah Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
+                      <td>Ashley Graham</td>
+                      <td>ITERA</td>
+                      <td><span class="text-success">Diverifikasi</span></td>
+                      <td><a href="<?= base_url('admin/detail_asp');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
                       
                     </tr>
                     <tr>
-                      <td>Garrett Winters</td>
-                      <td>Helm</td>
-                      <td>17-12-2014</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
+                      <td>Leon Scott</td>
+                      <td>UBL</td>
+                      <td><span class="text-primary">Menunggu verifikasi</span></td>
+                      <td><a href="<?= base_url('admin/detail_asp');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
                       
                     </tr>
                     <tr>
-                      <td>Ashton Cox</td>
-                      <td>Ear buds</td>
-                      <td>21-12-2012</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
+                      <td>Ada Wong</td>
+                      <td>UNILA</td>
+                      <td><span class="text-primary">Menunggu verifikasi</span></td>
+                      <td><a href="<?= base_url('admin/detail_asp');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
                       
                     </tr>
                     
