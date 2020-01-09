@@ -4,58 +4,60 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Pengajuan Angsuran</h1>
-
+          <h1 class="h3 mb-2 text-gray-800">Progres Angsuran Pengguna</h1>
+          
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel Pengajuan Angsuran</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Garrett Winters</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
-                      <th>Aksi</th>
-                      
+                      <th>Angsuran</th>
+                      <th>Status Angsuran</th>
+                      <th>Bukti</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
-                      <th>Aksi</th>
-
+                      <th>Angsuran</th>
+                      <th>Status Angsuran</th>
+                      <th>Bukti</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>Sound System</td>
-                      <td>24-02-2012</td>
-                      <td>Sudah Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Helm</td>
                       <td>17-12-2014</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
+                      <td><button class="btn btn-success btn-block">Lunas</button></td>
+                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Lihat</button></a></td>
                     </tr>
                     <tr>
-                      <td>Ashton Cox</td>
-                      <td>Ear buds</td>
-                      <td>21-12-2012</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
+                      <td>17-01-2015</td>
+                      <td><button class="btn btn-success btn-block">Lunas</button></td>
+                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Lihat</button></a></td>
+                    </tr>
+                    <tr>
+                      <td>17-02-2015</td>
+                      <td><button class="btn btn-success btn-block">Lunas</button></td>
+                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Lihat</button></a></td>
+                    </tr>
+                    <tr>
+                      <td>17-03-2015</td>
+                      <td><button class="btn btn-success btn-block">Lunas</button></td>
+                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Lihat</button></a></td>
+                    </tr>
+                    <tr>
+                      <td>17-04-2015</td>
+                      <td><button class="btn btn-success btn-block">Lunas</button></td>
+                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Lihat</button></a></td>
+                    </tr>
+                    <tr>
+                      <td>17-05-2015</td>
+                      <td><button class="btn btn-success btn-block">Lunas</button></td>
+                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Lihat</button></a></td>
                     </tr>
                     
                   </tbody>

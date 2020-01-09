@@ -9,7 +9,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin');?>">
         <div class="sidebar-brand-icon">
-          <img src="<?= base_url('assets/img/angsur1.png');?>" width="50px" height="50px">
+          <img src="<?= base_url('assets/img/angsur1.png');?>" width="55px" height="55px">
         </div>
         <div class="sidebar-brand-text mx-0 text-dark">Administrator</div>
       </a>
@@ -51,9 +51,8 @@
             <h6 class="collapse-header text-light te">Komponen:</h6>
             <a class="collapse-item text-white" href="<?= base_url('admin/customers');?>">Daftar Pelanggan</a>
             <a class="collapse-item text-white" href="<?= base_url('admin/daftar_asp');?>">Daftar ASP</a>
-            <a class="collapse-item text-white" href="#">Log Aktifitas</a>
-            <a class="collapse-item text-white" href="#">Riwayat Pemesanan</a>
-            <a class="collapse-item text-white" href="#">Other</a>
+            <a class="collapse-item text-white" href="<?= base_url('admin/log')?>">Log Aktifitas</a>
+            <a class="collapse-item text-white" href="<?= base_url('admin/riwayat')?>">Riwayat Pemesanan</a>
           </div>
         </div>
       </li>
@@ -67,8 +66,8 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-dark py-2 collapse-inner rounded">
             <h6 class="collapse-header text-light te">Komponen:</h6>
-            <a class="collapse-item text-white" href="login.html">Down Payment</a>
-            <a class="collapse-item text-white" href="register.html">Progres Pembayaran</a>
+            <a class="collapse-item text-white" href="<?= base_url('admin/down_payment')?>">Uang Muka</a>
+            <a class="collapse-item text-white" href="<?= base_url('admin/progres')?>">Progres Pembayaran</a>
             <a class="collapse-item text-white" href="forgot-password.html">Statistik</a>
           </div>
         </div>

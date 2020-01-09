@@ -4,58 +4,44 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Pengajuan Angsuran</h1>
-
+          <h1 class="h3 mb-2 text-gray-800">Log Aktifitas</h1>
+          
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel Pengajuan Angsuran</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabel Log Aktifitas</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
+                      <th>#ID Order</th>
                       <th>Status</th>
-                      <th>Aksi</th>
-                      
+                      <th>ASP</th>
+                      <th>Bukti Transaksi</th>
+                      <th>Catatan</th>
+                      <th>Tanggal</th>  
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Nama Lengkap</th>
-                      <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
+                      <th>#ID Order</th>
                       <th>Status</th>
-                      <th>Aksi</th>
-
+                      <th>ASP</th>
+                      <th>Bukti Transaksi</th>
+                      <th>Catatan</th>
+                      <th>Tanggal</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>Sound System</td>
-                      <td>24-02-2012</td>
-                      <td>Sudah Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Helm</td>
-                      <td>17-12-2014</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Ear buds</td>
-                      <td>21-12-2012</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
+                      <td>123</td>
+                      <td><button class="btn btn-success btn-block">Proses A</button></td>
+                      <td>Ashley Graham</td>
+                      <td><button class="btn btn-primary btn-block">Lihat bukti</button></td>
+                      <td>Bla bla bla..</td>
+                      <td>12-12-2012 00:00:00</td>
                     </tr>
                     
                   </tbody>

@@ -4,12 +4,12 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Pengajuan Angsuran</h1>
-
+          <h1 class="h3 mb-2 text-gray-800">Progres Angsuran</h1>
+          
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel Pengajuan Angsuran</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabel Progres</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -19,9 +19,9 @@
                       <th>Nama Lengkap</th>
                       <th>Barang</th>
                       <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
+                      <th>Jangka Waktu (Bulan)</th>
+                      <th>Progres Angsuran</th>
                       <th>Aksi</th>
-                      
                     </tr>
                   </thead>
                   <tfoot>
@@ -29,9 +29,9 @@
                       <th>Nama Lengkap</th>
                       <th>Barang</th>
                       <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
+                      <th>Jangka Waktu (Bulan)</th>
+                      <th>Progres Angsuran</th>
                       <th>Aksi</th>
-
                     </tr>
                   </tfoot>
                   <tbody>
@@ -39,23 +39,25 @@
                       <td>Tiger Nixon</td>
                       <td>Sound System</td>
                       <td>24-02-2012</td>
-                      <td>Sudah Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
+                      <td><button class="btn btn-primary btn-block">12</button></td>
+                      <td><button class="btn btn-danger btn-block">Belum membayar DP</button></td>
+                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Detail Progres</button></a></td>
                     </tr>
                     <tr>
                       <td>Garrett Winters</td>
                       <td>Helm</td>
                       <td>17-12-2014</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
+                      <td><button class="btn btn-primary btn-block">6</button></td>
+                      <td><button class="btn btn-success btn-block">Angsuran Selesai</button></td>
+                      <td><a href="<?= base_url('admin/detail_progres');?>"><button class="btn btn-primary btn-block">Detail Progres</button></a></td>
                     </tr>
                     <tr>
                       <td>Ashton Cox</td>
                       <td>Ear buds</td>
                       <td>21-12-2012</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
+                      <td><button class="btn btn-primary btn-block">8</button></td>
+                      <td><button class="btn btn-primary btn-block">Sedang Berjalan</button></td>
+                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Detail Progres</button></a></td>
                     </tr>
                     
                   </tbody>

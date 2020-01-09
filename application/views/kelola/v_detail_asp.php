@@ -78,9 +78,7 @@
     	<i class="fa fa-check-circle"></i>
     	 Status ASP <br>
     	<button class="btn btn-success m-2">Menunggu verifikasi</button>
-    	<button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Ubah status</button>
-    </p>
-    <p>
+    	<button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Ubah status</button><br>
         <i class="fa fa-check-circle"></i>
          Generate Password</b><br>
     	<button class="btn btn-danger m-2"><i class=""></i> Generate</button>

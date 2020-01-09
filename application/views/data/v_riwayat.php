@@ -4,12 +4,12 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Pengajuan Angsuran</h1>
+          <h1 class="h3 mb-2 text-gray-800">Riwayat Pemesanan</h1>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel Pengajuan Angsuran</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabel Riwayat Pemesanan</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -18,8 +18,9 @@
                     <tr>
                       <th>Nama Lengkap</th>
                       <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
+                      <th>ASP</th>
+                      <th>Status Dokumen</th>
+                      <th>Status Trx.</th>
                       <th>Aksi</th>
                       
                     </tr>
@@ -28,36 +29,21 @@
                     <tr>
                       <th>Nama Lengkap</th>
                       <th>Barang</th>
-                      <th>Tanggal Persetujuan</th>
-                      <th>Status</th>
+                      <th>ASP</th>
+                      <th>Status Dokumen</th>
+                      <th>Status Trx.</th>
                       <th>Aksi</th>
-
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
                       <td>Tiger Nixon</td>
                       <td>Sound System</td>
-                      <td>24-02-2012</td>
-                      <td>Sudah Diverifikasi</td>
+                      <td><button class="btn btn-danger">Ashley Graham</button></td>
+                      <td><button class="btn btn-success">Dokumen Disetujui</button></td>
+                      <td><button class="btn btn-success">Angsuran Sukses</button></td>s
                       <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
                     </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Helm</td>
-                      <td>17-12-2014</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Ear buds</td>
-                      <td>21-12-2012</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                    </tr>
-                    
                   </tbody>
                 </table>
               </div>

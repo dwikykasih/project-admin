@@ -19,7 +19,7 @@ class Admin extends CI_Controller {
 		$this->load->view('kelola/v_kelola_pengajuan');
 	}
 
-	public function detail()
+	public function detail_pengajuan()
 	{
 		$this->load->view('templates/v_header');
 		$this->load->view('templates/v_sidebar');
@@ -66,6 +66,44 @@ class Admin extends CI_Controller {
 		$this->load->view('templates/v_navbar');
 		$this->load->view('data/v_asp');
 	}
+
+	public function log()
+	{
+		$this->load->view('templates/v_header');
+		$this->load->view('templates/v_sidebar');
+		$this->load->view('templates/v_navbar');
+		$this->load->view('data/v_log');	
+	}
+
+	public function riwayat()
+	{
+		$this->load->view('templates/v_header');
+		$this->load->view('templates/v_sidebar');
+		$this->load->view('templates/v_navbar');
+		$this->load->view('data/v_riwayat');
+	}
+
+	public function down_payment()
+	{
+		$this->load->view('templates/v_header');
+		$this->load->view('templates/v_sidebar');
+		$this->load->view('templates/v_navbar');
+		$this->load->view('pembayaran/v_dp');
+	}
+
+	public function progres()
+	{
+		$this->load->view('templates/v_header');
+		$this->load->view('templates/v_sidebar');
+		$this->load->view('templates/v_navbar');
+		$this->load->view('pembayaran/v_progres');
+	}
+
+	public function detail_progres()
+	{
+		$this->load->view('templates/v_header');
+		$this->load->view('templates/v_sidebar');
+		$this->load->view('templates/v_navbar');
+		$this->load->view('pembayaran/v_detail_pembayaran');
+	}
 }
-
-
