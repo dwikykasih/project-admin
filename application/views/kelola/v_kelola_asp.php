@@ -33,27 +33,18 @@
                     </tr>
                   </tfoot>
                   <tbody>
+                    <?php foreach ($asp as $as): ?>
+                      <?php $id = $as['id_asp']; ?>
                     <tr>
-                      <td>Ashley Graham</td>
-                      <td>ITERA</td>
-                      <td><span class="text-success">Diverifikasi</span></td>
-                      <td><a href="<?= base_url('admin/detail_asp');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Leon Scott</td>
-                      <td>UBL</td>
-                      <td><span class="text-primary">Menunggu verifikasi</span></td>
-                      <td><a href="<?= base_url('admin/detail_asp');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Ada Wong</td>
-                      <td>UNILA</td>
-                      <td><span class="text-primary">Menunggu verifikasi</span></td>
-                      <td><a href="<?= base_url('admin/detail_asp');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
+                      <td><?= $as['nama'] ?></td>
+                      <td><?= $as['universitas']; ?></td>
+                      <td><?= $as['status'] == 1 ? "Diterima" : "Menunggu"; ?></td>
+                      <td>
+                        <?php
+                        echo "<a href='/project-admin/detail/asp?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
+                        ";?>
+                      </td>
+                    <?php endforeach; ?>
                     
                   </tbody>
                 </table>

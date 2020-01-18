@@ -12,23 +12,31 @@
         <i class="fa fa-address-card"></i>
          Identitas Mahasiswa
     </p>
+    <?php foreach ($detail as $d )  :?>
+        <?php $id = $d['id_pelanggan']; ?>
     <p>
-        <b>&nbsp ID Pelanggan</b>
+        <b>&nbsp ID Pelanggan</b><br>
+        &nbsp <?= $d['id_pelanggan'];?>
     </p>
     <p>
-        <b>&nbsp Nama Lengkap</b>
+        <b>&nbsp Nama Lengkap</b><br>
+        &nbsp <?= $d['nama'] ?>
     </p>
     <p>
-        <b>&nbsp HP</b>
+        <b>&nbsp HP</b><br>
+        &nbsp <?= $d['hp'];?>
     </p>
     <p>
-        <b>&nbsp Email</b>
+        <b>&nbsp Email</b><br>
+        &nbsp <?= $d['email'];?>
     </p>
     <p>
-        <b>&nbsp Tanggal Lahir</b>
+        <b>&nbsp Tanggal Lahir</b><br>
+        &nbsp <?= $d['tgl_lahir'];?>
     </p>
     <p>
-        <b>&nbsp No. Whatsapp</b>
+        <b>&nbsp No. Whatsapp</b><br>
+        &nbsp <?= $d['whatsapp'];?>
     </p></div>
         <div class="col">
     <p>
@@ -36,16 +44,20 @@
          Identitas Produk
     </p>
     <p>
-        <b>&nbsp Nama Barang</b>
+        <b>&nbsp Nama Barang</b><br>
+        &nbsp <?= $d['barang'];?>
     </p>
     <p>
-        <b>&nbsp Harga</b>
+        <b>&nbsp Harga</b><br>
+        &nbsp Rp. <?= $d['harga'];?>,-
     </p>
     <p>
-        <b>&nbsp Deskripsi</b>
+        <b>&nbsp Deskripsi</b><br>
+        &nbsp <?= $d['deskripsi'];?>
     </p>
     <p>
-        <b>&nbsp Link</b>
+        <b>&nbsp Link</b><br>
+        &nbsp <?= $d['link'];?>
     </p>  
         </div>
         <div class="col">
@@ -54,28 +66,36 @@
          Detail Angsuran
     </p>
     <p>
-        <b>&nbsp Jumlah Barang</b>
+        <b>&nbsp Jumlah Barang</b><br>
+        &nbsp <?= $d['jumlah_barang'];?>
     </p>
     <p>
-        <b>&nbsp Uang Muka</b>
+        <b>&nbsp Uang Muka</b><br>
+        &nbsp Rp. <?= $d['dp'];?>
     </p>
     <p>
-        <b>&nbsp Angsuran</b>
+        <b>&nbsp Angsuran</b><br>
+        &nbsp <?= $d['angsuran'];?>
     </p>
     <p>
-        <b>&nbsp Margin</b>
+        <b>&nbsp Margin</b><br>
+        &nbsp Rp. <?= $d['margin'];?>
     </p>
     <p>
-        <b>&nbsp Jangka Waktu</b>
+        <b>&nbsp Jangka Waktu</b><br>
+        &nbsp <?= $d['jangka_waktu'];?>
     </p>
     <p>
-        <b>&nbsp Catatan Penjual</b>
+        <b>&nbsp Catatan Penjual</b><br>
+        &nbsp <?= $d['catatan_penjual'];?>
     </p>
     <p>
-        <b>&nbsp Kode Voucher</b>
+        <b>&nbsp Kode Voucher</b><br>
+        &nbsp <?= $d['kode_voucher'];?>
     </p>
     <p>
-        <b>&nbsp Nilai Voucher</b>
+        <b>&nbsp Nilai Voucher</b><br>
+        &nbsp <?= $d['nilai_voucher'];?>
     </p>
         </div>
     </div>
@@ -105,16 +125,21 @@
     <p>
     	<b>&nbsp Angsuran: </b>
     </p>
+    <?php endforeach; ?>
     <p>
     	<i class="fas fa-user-cog"></i>
     	 Aksi Lainnya
     </p>
     <p>
     	<b>&nbsp Hapus pesanan (Perubahan dilakukan oleh admin)</b><br>
-    	<button class="btn btn-danger m-2"><i class="far fa-trash-alt"></i> Hapus</button>
+    	
+        <?php
+            echo "
+            <a href= javascript:confirmDelete('delete?delete_id=$id')>&nbsp<button class='btn btn-danger'><i class='far fa-fw fa-trash-alt'></i> Hapus</button></a>";
+        ?>
     </p>
 	</div>
-
+    
 </div>
 
 
@@ -135,3 +160,5 @@
   <script src="<?= base_url();?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?= base_url();?>assets/js/demo/chart-pie-demo.js"></script>
   <script src="<?= base_url();?>assets/js/demo/chart-bar-demo.js"></script>
+  <!--Confirm delete-->
+  <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/delete.js"></script>

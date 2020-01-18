@@ -35,15 +35,17 @@
                     </tr>
                   </tfoot>
                   <tbody>
+                    <?php foreach ($log as $l): ?>
+                      <?php $id = $l['id_log']; ?>
                     <tr>
-                      <td>123</td>
-                      <td><button class="btn btn-success btn-block">Proses A</button></td>
-                      <td>Ashley Graham</td>
-                      <td><button class="btn btn-primary btn-block">Lihat bukti</button></td>
-                      <td>Bla bla bla..</td>
-                      <td>12-12-2012 00:00:00</td>
-                    </tr>
-                    
+                      <td><?= $l['id_order'] ?></td>
+                      <td><button class="btn btn-success btn-block"><?= $l['status']; ?></button></td>
+                      <td><?= $l['id_asp']; ?></td>
+                      <td><button class="btn btn-primary btn-block">Lihat</button></td>
+                      <td><?= $l['catatan']; ?></td>
+                      <td><?= $l['tanggal']; ?></td>
+                      
+                    <?php endforeach; ?>
                   </tbody>
                 </table>
               </div>

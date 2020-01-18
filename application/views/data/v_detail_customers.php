@@ -11,60 +11,76 @@
                 </p>
         <div class="row">
             <div class="col">
-                
+                <?php foreach ($detail as $d )  :?>
+                <?php $id = $d['id_pelanggan']; ?>
                 <p>
-                	<b>&nbsp ID PelangganP</b>
+                	<b>&nbsp ID Pelanggan</b><br>
+                  &nbsp <?= $d['id_pelanggan']; ?>
                 </p>
                 <p>
-                	<b>&nbsp Nama Lengkap</b>
+                	<b>&nbsp Nama Lengkap</b><br>
+                  &nbsp <?= $d['nama']; ?>
                 </p>
                 <p>
-                    <b>&nbsp Jenis Kelamin</b>
+                    <b>&nbsp Jenis Kelamin</b><br>
+                  &nbsp <?= $d['jenis_kelamin']; ?>
                 </p>
                 <p>
-                	<b>&nbsp HP</b>
+                	<b>&nbsp HP</b><br>
+                  &nbsp <?= $d['hp']; ?>
                 </p>
                 <p>
-                	<b>&nbsp Email</b>
+                	<b>&nbsp Email</b><br>
+                  &nbsp <?= $d['email']; ?>
                 </p>
                 <p>
-                	<b>&nbsp No. Whatsapp</b>
+                	<b>&nbsp No. Whatsapp</b><br>
+                  &nbsp <?= $d['whatsapp']; ?>
                 </p>
                 <p>
-                    <b>&nbsp Skype</b>
+                    <b>&nbsp Skype</b><br>
+                  &nbsp <?= $d['skype']; ?>
                 </p>
             </div>
             <div class="col">
                 
                 <p>
-                    <b>&nbsp Alamat</b>
+                    <b>&nbsp Alamat</b><br>
+                  &nbsp <?= $d['alamat']; ?>
                 </p>
                 <p>
-                    <b>&nbsp Universitas</b>
+                    <b>&nbsp Universitas</b><br>
+                  &nbsp <?= $d['universitas']; ?>
                 </p>
                 <p>
-                    <b>&nbsp Tahun Masuk</b>
+                    <b>&nbsp Tahun Masuk</b><br>
+                  &nbsp <?= $d['tahun_masuk']; ?>
                 </p>
                 <p>
-                    <b>&nbsp Program Studi</b>
+                    <b>&nbsp Program Studi</b><br>
+                  &nbsp <?= $d['prodi']; ?>
                 </p>
                 
             </div>
             <div class="col">
                     <p>
                         <b>&nbsp KTP</b><br>
-                        <button class="btn btn-primary m-2">Lihat KTP</button>
+                        <a href="#">
+                        <button class="btn btn-primary m-2">Lihat KTP</button></a>
                     </p>
                     
                     <p>
                         <b>&nbsp Keterangan Aktif (KTM)</b><br>
-                        <button class="btn btn-primary m-2">Lihat KTM</button>
+                        <a href="#">
+                        <button class="btn btn-primary m-2">Lihat KTM</button></a>
                     </p>
 
                     <p>
                         <b>&nbsp Transkrip Nilai</b><br>
-                        <button class="btn btn-primary m-2">Lihat Transkrip Nilai</button>
+                        <a href="#">
+                        <button class="btn btn-primary m-2">Lihat Transkrip Nilai</button></a>
                     </p>
+                 <?php endforeach; ?>
             </div>
         </div>
 </div>

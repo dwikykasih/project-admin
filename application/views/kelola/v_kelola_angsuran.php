@@ -4,46 +4,43 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Daftar Angsur Student Partner</h1>
-          
+          <h1 class="h3 mb-2 text-gray-800">Pengajuan Angsuran</h1>
+
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabel ASP</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabel Pengajuan Angsuran</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nama Lengkap</th>
-                      <th>Email</th>
-                      <th>HP</th>
-                      <th>Tanggal Daftar</th>
+                      <th>ID Order</th>
+                      <th>Barang</th>
+                      <th>Tanggal Persetujuan</th>
                       <th>Aksi</th>
                       
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Nama Lengkap</th>
-                      <th>Email</th>
-                      <th>HP</th>
-                      <th>Tanggal Daftar</th>
+                      <th>ID Order</th>
+                      <th>Barang</th>
+                      <th>Tanggal Persetujuan</th>
                       <th>Aksi</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                    <?php foreach ($asp as $a): ?>
-                      <?php $id = $a['id_asp']; ?>
+                    <?php foreach ($angsuran as $p): ?>
+                      <?php $id = $p['id_pelanggan']; ?>
                     <tr>
-                      <td><?= $a['nama'] ?></td>
-                      <td><?= $a['email']; ?></td>
-                      <td><?= $a['hp']; ?></td>
-                      <td><?= $a['tgl_daftar']; ?></td>
+                      <td><?= $p['id_order'] ?></td>
+                      <td><?= $p['barang']; ?></td>
+                      <td><?= $p['tgl_persetujuan']; ?></td>
                       <td>
                         <?php
-                        echo "<a href='/project-admin/detail/pelanggan?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
+                        echo "<a href='/project-admin/detail?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
                         ";?>
                       </td>
                     <?php endforeach; ?>

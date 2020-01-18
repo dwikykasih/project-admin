@@ -35,29 +35,19 @@
                     </tr>
                   </tfoot>
                   <tbody>
+                    <?php foreach ($pengajuan as $p): ?>
+                      <?php $id = $p['id_pelanggan']; ?>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>Sound System</td>
-                      <td>24-02-2012</td>
-                      <td>Sudah Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Helm</td>
-                      <td>17-12-2014</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Ear buds</td>
-                      <td>21-12-2012</td>
-                      <td>Belum Diverifikasi</td>
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                    </tr>
-                    
+                      <td><?= $p['nama'] ?></td>
+                      <td><?= $p['barang']; ?></td>
+                      <td><?= $p['tgl_persetujuan']; ?></td>
+                      <td><?= $p['status'] == 1 ? "Diterima" : "Menunggu"; ?></td>
+                      <td>
+                        <?php
+                        echo "<a href='/project-admin/detail?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
+                        ";?>
+                      </td>
+                    <?php endforeach; ?>
                   </tbody>
                 </table>
               </div>

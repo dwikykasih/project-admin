@@ -34,8 +34,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="py-2 collapse-inner bg-dark rounded">
             <h6 class="collapse-header text-light">Komponen:</h6>
-            <a class="collapse-item text-white" href="<?= base_url('admin/pengajuan')?>">Pengajuan Angsuran</a>
-            <a class="collapse-item text-white" href="<?= base_url('admin/asp')?>">Angsur Student Partner</a>
+            <a class="collapse-item text-white" href="<?= base_url('kelola')?>">Pengajuan Angsuran</a>
+            <a class="collapse-item text-white" href="<?= base_url('kelola/angsuran')?>">Angsuran Berjalan</a>
+            <a class="collapse-item text-white" href="<?= base_url('kelola/asp')?>">Angsur Student Partner</a>
           </div>
         </div>
       </li>
@@ -49,9 +50,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-dark py-2 collapse-inner rounded">
             <h6 class="collapse-header text-light te">Komponen:</h6>
-            <a class="collapse-item text-white" href="<?= base_url('admin/customers');?>">Daftar Pelanggan</a>
-            <a class="collapse-item text-white" href="<?= base_url('admin/daftar_asp');?>">Daftar ASP</a>
-            <a class="collapse-item text-white" href="<?= base_url('admin/log')?>">Log Aktifitas</a>
+            <a class="collapse-item text-white" href="<?= base_url('data');?>">Daftar Pelanggan</a>
+            <a class="collapse-item text-white" href="<?= base_url('data/daftar_asp');?>">Daftar ASP</a>
+            <a class="collapse-item text-white" href="<?= base_url('data/daftar_log')?>">Log Aktifitas</a>
             <a class="collapse-item text-white" href="<?= base_url('admin/riwayat')?>">Riwayat Pemesanan</a>
           </div>
         </div>

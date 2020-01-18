@@ -34,29 +34,19 @@
                     </tr>
                   </tfoot>
                   <tbody>
+                    <?php foreach ($pelanggan as $pl): ?>
+                      <?php $id = $pl['id_pelanggan']; ?>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>tiger@gmail.com</td>
-                      <td>628963448802</td>
-                      <td>21-12-2012</td>
-                      <td><a href="<?= base_url('admin/detail_customers');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>garrett@yahoo.com</td>
-                      <td>62817122014</td>
-                      <td>21-12-2012</td>
-                      <td><a href="<?= base_url('admin/detail_customers');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>ashton@student.itera.ac.id</td>
-                      <td>624367887827</td>
-                      <td>21-12-2012</td>
-                      <td><a href="<?= base_url('admin/detail_customers');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                      
-                    </tr>
+                      <td><?= $pl['nama'] ?></td>
+                      <td><?= $pl['email']; ?></td>
+                      <td><?= $pl['hp']; ?></td>
+                      <td><?= $pl['tgl_daftar']; ?></td>
+                      <td>
+                        <?php
+                        echo "<a href='/project-admin/detail/pelanggan?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
+                        ";?>
+                      </td>
+                    <?php endforeach; ?>
                     
                   </tbody>
                 </table>
