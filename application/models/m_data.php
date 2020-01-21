@@ -33,6 +33,13 @@ class M_data extends CI_Model
         return $this->db->get('logtrx')->result_array();
     }
 
+    function tampil_riwayat()
+    {
+        
+        $this->db->order_by("id_order", "desc");
+        return $this->db->get('pemesanan')->result_array();
+    }
+
     function daftar_asp()
     {
         $this->db->order_by("id_asp", "desc");
@@ -69,4 +76,5 @@ class M_data extends CI_Model
         echo "<script>location='kelola';</script>"; 
      
     }
+    
 }

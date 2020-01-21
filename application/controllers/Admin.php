@@ -28,14 +28,6 @@ class Admin extends CI_Controller {
 		$this->load->view('data/v_detail_customers');
 	}
 
-	public function riwayat()
-	{
-		$this->load->view('templates/v_header');
-		$this->load->view('templates/v_sidebar');
-		$this->load->view('templates/v_navbar');
-		$this->load->view('data/v_riwayat');
-	}
-
 	public function down_payment()
 	{
 		$this->load->view('templates/v_header');

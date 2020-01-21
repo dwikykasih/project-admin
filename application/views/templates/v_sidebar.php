@@ -53,7 +53,7 @@
             <a class="collapse-item text-white" href="<?= base_url('data');?>">Daftar Pelanggan</a>
             <a class="collapse-item text-white" href="<?= base_url('data/daftar_asp');?>">Daftar ASP</a>
             <a class="collapse-item text-white" href="<?= base_url('data/daftar_log')?>">Log Aktifitas</a>
-            <a class="collapse-item text-white" href="<?= base_url('admin/riwayat')?>">Riwayat Pemesanan</a>
+            <a class="collapse-item text-white" href="<?= base_url('data/riwayat')?>">Riwayat Pemesanan</a>
           </div>
         </div>
       </li>

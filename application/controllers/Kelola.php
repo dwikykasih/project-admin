@@ -37,4 +37,16 @@ class Kelola extends CI_Controller
         $this->load->view('templates/v_navbar');
         $this->load->view('kelola/v_kelola_angsuran', $data);
     }
+
+    public function update()
+    {
+        $data = [
+            'catatan_admin' => $this->input->post('catatan_admin'),
+            'status' => $this->input->post('status')
+        ];
+        
+
+        $this->db->update('pengajuan', $data);
+        redirect('kelola');
+    }
 }

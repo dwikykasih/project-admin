@@ -43,7 +43,7 @@
                       <td><?= $a['tgl_daftar']; ?></td>
                       <td>
                         <?php
-                        echo "<a href='/project-admin/detail/pelanggan?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
+                        echo "<a href='/project-admin/detail/asp?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
                         ";?>
                       </td>
                     <?php endforeach; ?>

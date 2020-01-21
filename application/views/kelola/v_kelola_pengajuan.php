@@ -37,11 +37,22 @@
                   <tbody>
                     <?php foreach ($pengajuan as $p): ?>
                       <?php $id = $p['id_pelanggan']; ?>
+                      <?php $stat = $p['status']; ?>
                     <tr>
                       <td><?= $p['nama'] ?></td>
                       <td><?= $p['barang']; ?></td>
                       <td><?= $p['tgl_persetujuan']; ?></td>
-                      <td><?= $p['status'] == 1 ? "Diterima" : "Menunggu"; ?></td>
+                      <td>
+                        <?php if($stat == '1'){
+                          echo "<button class='btn btn-success btn-block'>Dokumen Diverifikasi</button>";
+                        }elseif($stat == '2'){
+                          echo "<button class='btn btn-danger btn-block'>Dokumen Ditolak</button>";
+                        }else{
+                          echo "<button class='btn btn-primary btn-block'>Menunggu Persetujuan</button>";
+                        }
+                        ?>
+                        
+                      </td>
                       <td>
                         <?php
                         echo "<a href='/project-admin/detail?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>

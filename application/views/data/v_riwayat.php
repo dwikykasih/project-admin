@@ -1,5 +1,3 @@
-
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -18,32 +16,36 @@
                     <tr>
                       <th>Nama Lengkap</th>
                       <th>Barang</th>
-                      <th>ASP</th>
-                      <th>Status Dokumen</th>
-                      <th>Status Trx.</th>
-                      <th>Aksi</th>
-                      
+                      <td>ASP</td>
+                      <td>Status Dokumen</td>
+                      <td>Status Transaksi</td>
+                      <td>Aksi</td>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Nama Lengkap</th>
                       <th>Barang</th>
-                      <th>ASP</th>
-                      <th>Status Dokumen</th>
-                      <th>Status Trx.</th>
-                      <th>Aksi</th>
+                      <td>ASP</td>
+                      <td>Status Dokumen</td>
+                      <td>Status Transaksi</td>
+                      <td>Aksi</td>
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>Sound System</td>
-                      <td><button class="btn btn-danger">Ashley Graham</button></td>
-                      <td><button class="btn btn-success">Dokumen Disetujui</button></td>
-                      <td><button class="btn btn-success">Angsuran Sukses</button></td>s
-                      <td><a href="<?= base_url('admin/detail_pengajuan');?>"><button class="btn btn-primary btn-block">Detail</button></a></td>
-                    </tr>
+                    <?php foreach ($riwayat as $r): ?>
+                      <?php $id = $r['id_pelanggan']?>
+                      <td><?= $r['nama']; ?></td>
+                      <td><?= $r['nama_barang']; ?></td>
+                      <td><button class="btn btn-danger btn-block"><?= $r['asp']; ?></td>
+                      <td><button class="btn btn-success btn-block"><?= $r['status_dok']; ?></button></td>
+                      <td><button class="btn btn-success btn-block"><?= $r['status_trx']; ?></button></td>
+                      <td>
+                        <?php
+                        echo "<a href='/project-admin/detail?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
+                        ";?>
+                      </td>
+                    <?php endforeach?>                   
                   </tbody>
                 </table>
               </div>

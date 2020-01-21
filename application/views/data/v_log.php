@@ -44,7 +44,7 @@
                       <td><button class="btn btn-primary btn-block">Lihat</button></td>
                       <td><?= $l['catatan']; ?></td>
                       <td><?= $l['tanggal']; ?></td>
-                      
+                    </tr>
                     <?php endforeach; ?>
                   </tbody>
                 </table>
