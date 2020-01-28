@@ -28,15 +28,7 @@ class Data extends CI_Controller
         $this->load->view('templates/v_navbar');
         $this->load->view('data/v_asp', $data);
     }
-    
-    public function daftar_log()
-    {
-        $data["log"] = $this->m_data->tampil_log();
-        $this->load->view('templates/v_header');
-        $this->load->view('templates/v_sidebar');
-        $this->load->view('templates/v_navbar');
-        $this->load->view('data/v_log', $data);
-    }
+
 
     public function riwayat()
     {
@@ -45,6 +37,13 @@ class Data extends CI_Controller
         $this->load->view('templates/v_sidebar');
         $this->load->view('templates/v_navbar');
         $this->load->view('data/v_riwayat', $data);
+    }
+    public function tes()
+    {
+        $this->load->view('templates/v_header');
+        $this->load->view('templates/v_sidebar');
+        $this->load->view('templates/v_navbar');
+        $this->load->view('data/tes');
     }
 
 }

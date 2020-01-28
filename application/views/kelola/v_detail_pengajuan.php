@@ -97,10 +97,7 @@
         <b>&nbsp Nilai Voucher</b><br>
         &nbsp <?= $d['nilai_voucher'];?>
     </p>
-    <p>
-        <b>&nbsp Catatan Administrator</b><br>
-        &nbsp <?= $d['catatan_admin'];?>
-    </p>
+    
         </div>
     </div>
     <br>
@@ -112,26 +109,62 @@
     <p>
         <?php $stat = $d['status']; ?>
     	<?php if ($stat == '1') {
-            echo "&nbsp <button class='btn btn-success'><i class='fa fa-check-circle'></i> Dokumen Diverifikasi</button>";
+            echo "&nbsp <button class='btn btn-success'><i class='fa fa-fw fa-check-circle'></i> Dokumen Disetujui</button>";
         }elseif($stat == '2'){
-            echo "&nbsp <button class='btn btn-danger'><i class='fas fa-exclamation'></i> Dokumen Ditolak</button>";
+            echo "&nbsp <button class='btn btn-danger'><i class='fas fa-fw fa-exclamation'></i> Dokumen Ditolak</button>";
         }else{
-            echo "&nbsp <button class='btn btn-primary'><i class='fas fa-exclamation'></i> Menunggu Persetujuan</button>";
+            echo "&nbsp <button class='btn btn-primary'><i class='fas fa-fw fa-exclamation'></i> Dokumen Diverifikasi</button>";
         }?>    	
     	<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-pencil-alt"></i> Ubah status</button>
         
     </p>
     <p>
     	<b>&nbsp Nama ASP (Perubahan dilakukan oleh admin)</b><br>
-    	<button class="btn btn-danger m-2"><i class="fas fa-exclamation"></i> Dokumen belum disetujui</button>
+      <?php
+        $asp = $d['asp']; 
+        if($asp == '0'){
+          echo "&nbsp <button class='btn btn-success'><i class='fas fa-fw fa-user-plus'></i> ASP Belum Ditentukan</button>";
+        }else{
+          echo "&nbsp <button class='btn btn-success'><i class='fas fa-fw fa-user-plus'></i> " . $asp . "</button>";
+        }
+        ?>
+        <?php
+        if($stat == 1){
+            echo "<button class='btn btn-primary m-2' data-toggle='modal' data-target='#pilihAspModal'><i class='fas fa-fw fa-pencil-alt'></i> Pilih ASP</button>";
+              
+        }else{
+            echo "<button class='btn btn-danger m-2'><i class='fas fa-exclamation'></i> Dokumen Belum Disetujui</button>";
+        }
+        ?>
+
+        
+        
+    	
     </p>
     <p>
     	<b>&nbsp Buat Akad (Perubahan dilakukan oleh admin)</b><br>
-    	<button class="btn btn-danger m-2"><i class="fas fa-exclamation"></i> ASP belum ditentukan</button>
+    	<?php
+      if($asp == '0'){
+        echo "&nbsp <button class='btn btn-danger'><i class='fas fa-fw fa-exclamation'></i> ASP Belum Ditentukan</button>";
+      }else{
+        echo "&nbsp <button class='btn btn-primary'><i class='fas fa-fw fa-pencil-alt'></i> Unggah Akad</button>";
+      }
+      ?>
     </p>
     <p>
     	<b>&nbsp Status Transaksi (Perubahan dilakukan oleh ASP)</b><br>
-    	<button class="btn btn-danger m-2"><i class="fas fa-exclamation"></i> Dokumen akad belum diunggah</button>
+    	<?php
+      $akad = $d['akad'];
+      $trx = $d['status_trx'];
+      if ($akad == '0'){
+        echo "&nbsp <button class='btn btn-danger'><i class='fas fa-fw fa-exclamation'></i> Dokumen Akad Belum Diunggah</button";
+      }else{
+        if($trx == '0'){
+
+        }
+        
+      }
+      ?>
     </p>
     <p>
     	<b>&nbsp Angsuran: </b>
@@ -163,34 +196,35 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="<?= base_url('kelola/update');?>">
+        <form action="<?php echo base_url(). 'kelola/update'; ?>" method="post">
           <div class="form-group">
+            <input type="hidden" name="id_pelanggan" value="<?= $d['id_pelanggan']; ?>">
             <label for="recipient-name" class="col-form-label">Catatan untuk konsumen (<b>Harus diisi</b>):</label>
             <textarea class="form-control" id="message-text" name="catatan_admin" placeholder="Catatan untuk konsumen dari administrator.." style="height: 200px;"><?= $d['catatan_admin']?></textarea>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Ubah Status:</label>
-                
+                <input type="hidden" name="asp" value="0">
                 <?php if($stat == '1'){
                     echo "<select class='custom-select' id='inputGroupSelect04' name='status'>
                             <option>Pilih...</option>
-                            <option value='1' selected>Diterima</option>
-                            <option value='0'>Menunggu</option>
-                            <option value='2'>Ditolak</option>
+                            <option value='1' selected>Setujui</option>
+                            <option value='0'>Verifikasi</option>
+                            <option value='2'>Tolak</option>
                           </select>";
                       }elseif($stat == '2'){
                         echo "<select class='custom-select' id='inputGroupSelect04' name='status'>
                                 <option>Pilih...</option>
-                                <option value='1'>Diterima</option>
-                                <option value='0'>Menunggu</option>
-                                <option value='2' selected>Ditolak</option>
+                                <option value='1'>Setujui</option>
+                                <option value='0'>Verifikasi</option>
+                                <option value='2' selected>Tolak</option>
                               </select>";
                       }else{
                         echo "<select class='custom-select' id='inputGroupSelect04' name='status'>
                                 <option>Pilih...</option>
-                                <option value='1'>Diterima</option>
-                                <option value='0' selected>Menunggu</option>
-                                <option value='2'>Ditolak</option>
+                                <option value='1'>Setujui</option>
+                                <option value='0' selected>Verifikasi</option>
+                                <option value='2'>Tolak</option>
                               </select>";
                       }
             ?>
@@ -202,10 +236,29 @@
       </div>
     </div>
   </div>
-</div>        
+</div>
 
+<!--Modal-->
+<div class="modal fade" id="pilihAspModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-pencil-alt fa-fw"></i> Pilih ASP</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
-<?php endforeach;?>
+      <div class="modal-body">
+        <form action="<?php echo base_url(). 'kelola/pilih_asp'; ?>" method="post">
+          <div class="form-group">
+            <input type="hidden" name="id_pelanggan" value="<?= $d['id_pelanggan'];?>">
+            <!--lanjutan ada di views/data/modal_asp.php-->
+            <?php
+            $this->load->view('data/modal_asp');?>
+
+<?php endforeach; ?>
+
 
 
   <!-- Bootstrap core JavaScript-->

@@ -36,7 +36,7 @@
             <h6 class="collapse-header text-light">Komponen:</h6>
             <a class="collapse-item text-white" href="<?= base_url('kelola')?>">Pengajuan Angsuran</a>
             <a class="collapse-item text-white" href="<?= base_url('kelola/angsuran')?>">Angsuran Berjalan</a>
-            <a class="collapse-item text-white" href="<?= base_url('kelola/asp')?>">Angsur Student Partner</a>
+            <a class="collapse-item text-white" href="<?= base_url('kelola/asp')?>">Pengajuan ASP</a>
           </div>
         </div>
       </li>
@@ -52,7 +52,6 @@
             <h6 class="collapse-header text-light te">Komponen:</h6>
             <a class="collapse-item text-white" href="<?= base_url('data');?>">Daftar Pelanggan</a>
             <a class="collapse-item text-white" href="<?= base_url('data/daftar_asp');?>">Daftar ASP</a>
-            <a class="collapse-item text-white" href="<?= base_url('data/daftar_log')?>">Log Aktifitas</a>
             <a class="collapse-item text-white" href="<?= base_url('data/riwayat')?>">Riwayat Pemesanan</a>
           </div>
         </div>

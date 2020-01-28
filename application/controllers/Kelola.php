@@ -38,15 +38,63 @@ class Kelola extends CI_Controller
         $this->load->view('kelola/v_kelola_angsuran', $data);
     }
 
-    public function update()
+    function update()
     {
-        $data = [
-            'catatan_admin' => $this->input->post('catatan_admin'),
-            'status' => $this->input->post('status')
-        ];
+        $id = $this->input->post('id_pelanggan');
+        $catatan = $this->input->post('catatan_admin');
+        $status = $this->input->post('status');
+        $asp = $this->input->post('asp');
         
-
-        $this->db->update('pengajuan', $data);
+     
+        $data = array(
+            'catatan_admin' => $catatan,
+            'status' => $status,
+            'asp' => $asp
+        );
+     
+        $where = array(
+            'id_pelanggan' => $id
+        );
+     
+        $this->m_data->update_data($where,$data,'pengajuan');
         redirect('kelola');
     }
+
+    function update_asp()
+    {
+        $id = $this->input->post('id_asp');
+        $catatan = $this->input->post('catatan_admin');
+        $status = $this->input->post('status');
+        
+     
+        $data = array(
+            'catatan_admin' => $catatan,
+            'status' => $status,
+        );
+     
+        $where = array(
+            'id_asp' => $id
+        );
+     
+        $this->m_data->update_data($where,$data,'pengajuan_asp');
+        redirect('kelola/asp');
+    }
+
+    function pilih_asp()
+    {
+        $id = $this->input->post('id_pelanggan');
+        $asp = $this->input->post('asp');
+     
+        $data = array(
+            'asp' => $asp
+        );
+     
+        $where = array(
+            'id_pelanggan' => $id
+        );
+     
+        $this->m_data->update_data($where,$data,'pengajuan');
+        redirect('kelola');
+    }
+
 }

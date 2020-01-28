@@ -11,7 +11,7 @@ class M_data extends CI_Model
     function tampil_angsuran()
     {
         $this->db->order_by("id_order", "desc");
-        return $this->db->get('pengajuan', ['status' => 1])->result_array();
+        return $this->db->get_where('pengajuan', ['status' => 1])->result_array();
     }
 
     function tampil_asp()
@@ -27,17 +27,18 @@ class M_data extends CI_Model
         return $this->db->get('daftar_pelanggan')->result_array();
     }
 
-    function tampil_log()
-    {
-        $this->db->order_by("id_log", "desc");
-        return $this->db->get('logtrx')->result_array();
-    }
-
+    
     function tampil_riwayat()
     {
         
-        $this->db->order_by("id_order", "desc");
-        return $this->db->get('pemesanan')->result_array();
+        $this->db->order_by("id_pelanggan", "desc");
+        return $this->db->get_where('pengajuan', ['status' => 1])->result_array();
+    }
+
+    function select_asp()
+    {
+        $query = $this->db->select('*')->from('pengajuan_asp')->get();
+        return $query->result();
     }
 
     function daftar_asp()
@@ -68,6 +69,12 @@ class M_data extends CI_Model
         return $query->result_array();
     }
 
+    public function pilih_asp()
+    {
+        $hasil = $this->db->query('SELECT * FROM pengajuan_asp')->result_array();
+        return $hasil;
+    }
+
     public function hapus()
     {
         $id = $_GET["delete_id"];
@@ -76,5 +83,10 @@ class M_data extends CI_Model
         echo "<script>location='kelola';</script>"; 
      
     }
+
+    function update_data($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }   
     
 }

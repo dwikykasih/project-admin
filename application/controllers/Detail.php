@@ -15,7 +15,6 @@ class Detail extends CI_Controller{
         $this->load->view('templates/v_sidebar');
         $this->load->view('templates/v_navbar');
         $this->load->view('kelola/v_detail_pengajuan', $data);
-     
     }
     
     public function asp()

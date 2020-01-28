@@ -35,16 +35,49 @@
                   <tbody>
                     <?php foreach ($riwayat as $r): ?>
                       <?php $id = $r['id_pelanggan']?>
+                      <tr>
                       <td><?= $r['nama']; ?></td>
-                      <td><?= $r['nama_barang']; ?></td>
-                      <td><button class="btn btn-danger btn-block"><?= $r['asp']; ?></td>
-                      <td><button class="btn btn-success btn-block"><?= $r['status_dok']; ?></button></td>
-                      <td><button class="btn btn-success btn-block"><?= $r['status_trx']; ?></button></td>
+                      <td><?= $r['barang']; ?></td>
+                      <td>
+                      <?php 
+                        $asp = $r['asp'];
+                      if($asp == '0'){
+                      echo "<button class='btn btn-danger btn-block'>ASP Belum Ditentukan</button>";
+                        }else{
+                          echo "<button class='btn btn-success btn-block'>$asp</button>";
+                        }
+                        ?></td>
+                      <td>
+                         <?php
+                         $stat = $r['status'];
+                          if($stat == '1'){
+                          echo "<button class='btn btn-success btn-block'>Dokumen Disetujui</button>";
+                          }else{
+                            echo "Dokumen Belum Disetujui";
+                          }
+                        ?>
+                      </td>
+                      <td>
+                      <?php
+                        $trx = $r['status_trx'];
+                        if($trx == '0'){
+                          echo "<button class='btn btn-primary btn-block'>Angsuran belum diproses</button>";
+                        }elseif($trx == '1'){
+                          echo "<button class='btn btn-primary btn-block'>Pembayaran Uang Muka</button>";
+                        }elseif($trx == '2'){
+                          echo "<button class='btn btn-primary btn-block'>Angsuran Berjalan</button>";
+                        }elseif($trx == '3'){
+                          echo "<button class='btn btn-primary btn-block'>Angsuran Selesai</button>";
+                        }else{
+                          echo "Terjadi kesalahan.";
+                        }
+                      ?></td>
                       <td>
                         <?php
                         echo "<a href='/project-admin/detail?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
                         ";?>
                       </td>
+                      </tr>
                     <?php endforeach?>                   
                   </tbody>
                 </table>

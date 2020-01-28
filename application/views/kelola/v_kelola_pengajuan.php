@@ -44,11 +44,11 @@
                       <td><?= $p['tgl_persetujuan']; ?></td>
                       <td>
                         <?php if($stat == '1'){
-                          echo "<button class='btn btn-success btn-block'>Dokumen Diverifikasi</button>";
+                          echo "<button class='btn btn-success btn-block'>Dokumen Disetujui</button>";
                         }elseif($stat == '2'){
                           echo "<button class='btn btn-danger btn-block'>Dokumen Ditolak</button>";
                         }else{
-                          echo "<button class='btn btn-primary btn-block'>Menunggu Persetujuan</button>";
+                          echo "<button class='btn btn-primary btn-block'>Dokumen Diverifikasi</button>";
                         }
                         ?>
                         

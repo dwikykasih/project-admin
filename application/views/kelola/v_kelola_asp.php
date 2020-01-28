@@ -38,7 +38,20 @@
                     <tr>
                       <td><?= $as['nama'] ?></td>
                       <td><?= $as['universitas']; ?></td>
-                      <td><?= $as['status'] == 1 ? "Diterima" : "Menunggu"; ?></td>
+                      <td>
+                        <?php $stat = $as['status'];?>
+                        <?php 
+                        if($stat == '1'){
+                          echo "<button class='btn btn-success btn-block'>Diverifikasi</button>";
+                        }elseif($stat == '2'){
+                          echo "<button class='btn btn-danger btn-block'>Ditolak</button>";
+                        }else{
+                          echo "<button class='btn btn-primary btn-block'>Menunggu</button>";
+                        }
+
+                        ?>
+                        
+                      </td>
                       <td>
                         <?php
                         echo "<a href='/project-admin/detail/asp?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
