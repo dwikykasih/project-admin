@@ -46,7 +46,10 @@
                         echo "<a href='/project-admin/detail/asp?detail_id=$id'><button class='btn btn-primary btn-block'>Detail</button></a>
                         ";?>
                       </td>
+                      
                     <?php endforeach; ?>
+                    <?php $nama=$a['nama'];?>
+                      <?php echo htmlentities($nama);?>
                   </tbody>
                 </table>
               </div>

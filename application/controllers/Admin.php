@@ -3,12 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->model("m_data");
+        $this->load->library('form_validation');
+    }
+
 	public function index()
 	{
+		$data["admin"] = $this->m_data->tampil_data();
 		$this->load->view('templates/v_header');
 		$this->load->view('templates/v_sidebar');
 		$this->load->view('templates/v_navbar');
-		$this->load->view('v_admin');
+		$this->load->view('dashboard/v_admin', $data);
 		$this->load->view('templates/v_footer');
 	}
 	
@@ -51,4 +59,6 @@ class Admin extends CI_Controller {
 		$this->load->view('templates/v_navbar');
 		$this->load->view('pembayaran/v_detail_pembayaran');
 	}
+
+
 }

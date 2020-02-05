@@ -6,31 +6,24 @@
 
           <!-- Content Row -->
           <div class="row">
+            
+            <?php
+            $this->load->view('dashboard/setujui');
+            $this->load->view('dashboard/verifikasi');
+            $this->load->view('dashboard/tolak');
+            
+            ?>
+          </div>
 
+          <div class="row">
+            
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Angsuran (Perbulan)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total pPembelian Barang (Pertahun)</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Pembelian Barang (Pertahun)</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 1.500.000</div>
                     </div>
                     <div class="col-auto">
@@ -42,7 +35,7 @@
             </div>
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -59,7 +52,7 @@
             </div>
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -83,24 +76,46 @@
                 </div>
               </div>
             </div>
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Menunggu Persetujuan</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
+
+          <div class="row">
+            <!-- Pending Requests Card Example -->
+            <div class="col mb-4">
+              
+            </div>
+
+          <div class="col mb-4">
+            
+          </div>
+
+          <div class="col mb-4">
+            
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col mb-4">
+            
+            <form method="post" action="<?= base_url('kelola/update_tgl'); ?>">
+              <!--tanggal-->
+              <?php
+              $tgl = date('Y-m-d');?>
+              <input type="hidden" name="tgl_sekarang" value="<?php echo date('Y-m-d');?>">
+              <input type="hidden" name="tgl_awal" value="<?php echo date('Y-m-01', strtotime($tgl));?>">
+              <input type="hidden" name="tgl_akhir" value="<?php echo date('Y-m-t', strtotime($tgl));?>">
+
+              <input type="hidden" name="status" value="1">
+              <button class="btn btn-primary"><i class="fas fa-fw fa-sync"></i> Perbarui Data</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      
+
+
 
           
 

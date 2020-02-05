@@ -44,12 +44,16 @@ class Kelola extends CI_Controller
         $catatan = $this->input->post('catatan_admin');
         $status = $this->input->post('status');
         $asp = $this->input->post('asp');
+        $tgl_persetujuan = $this->input->post('tgl_persetujuan');
+        $file_akad = $this->input->post('file_akad');
         
      
         $data = array(
             'catatan_admin' => $catatan,
             'status' => $status,
-            'asp' => $asp
+            'asp' => $asp,
+            'tgl_persetujuan' => $tgl_persetujuan,
+            'file_akad' => $file_akad
         );
      
         $where = array(
@@ -69,7 +73,7 @@ class Kelola extends CI_Controller
      
         $data = array(
             'catatan_admin' => $catatan,
-            'status' => $status,
+            'status' => $status
         );
      
         $where = array(
@@ -87,6 +91,50 @@ class Kelola extends CI_Controller
      
         $data = array(
             'asp' => $asp
+        );
+     
+        $where = array(
+            'id_pelanggan' => $id
+        );
+     
+        $this->m_data->update_data($where,$data,'pengajuan');
+        redirect('kelola');
+    }
+
+    function update_tgl()
+    {
+        $status = $this->input->post('status');
+        $tgl_sekarang = $this->input->post('tgl_sekarang');
+        $tgl_awal = $this->input->post('tgl_awal');
+        $tgl_akhir = $this->input->post('tgl_akhir');
+     
+        $data = array(
+            'tgl_sekarang' => $tgl_sekarang,
+            'tgl_awal' => $tgl_awal,
+            'tgl_akhir' => $tgl_akhir
+        );
+
+        $where = array(
+            'status' => $status
+        );
+     
+     
+        $this->m_data->update_data($where,$data,'pengajuan');
+        redirect('admin');
+    }
+
+    function update_akad()
+    {
+        $id = $this->input->post('id_pelanggan');
+        $catatan_akad = $this->input->post('catatan_akad');
+        $tgl_akad = $this->input->post('tgl_akad');
+        $file_akad = $this->input->post('file_akad');
+        
+     
+        $data = array(
+            'catatan_akad' => $catatan_akad,
+            'tgl_akad' => $tgl_akad,
+            'file_akad' => $file_akad
         );
      
         $where = array(

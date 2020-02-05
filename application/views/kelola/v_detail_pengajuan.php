@@ -123,9 +123,9 @@
       <?php
         $asp = $d['asp']; 
         if($asp == '0'){
-          echo "&nbsp <button class='btn btn-success'><i class='fas fa-fw fa-user-plus'></i> ASP Belum Ditentukan</button>";
+          echo "";
         }else{
-          echo "&nbsp <button class='btn btn-success'><i class='fas fa-fw fa-user-plus'></i> " . $asp . "</button>";
+          echo "&nbsp <button class='btn btn-success'><i class='fas fa-fw fa-user-plus'></i>".$asp."</button>";
         }
         ?>
         <?php
@@ -144,11 +144,18 @@
     <p>
     	<b>&nbsp Buat Akad (Perubahan dilakukan oleh admin)</b><br>
     	<?php
+      $akad = $d['file_akad'];
       if($asp == '0'){
         echo "&nbsp <button class='btn btn-danger'><i class='fas fa-fw fa-exclamation'></i> ASP Belum Ditentukan</button>";
       }else{
-        echo "&nbsp <button class='btn btn-primary'><i class='fas fa-fw fa-pencil-alt'></i> Unggah Akad</button>";
+        if($akad == '0'){
+        echo "&nbsp <button class='btn btn-primary' data-toggle='modal' data-target='#akadModal'><i class='fas fa-fw fa-pencil-alt'></i> Unggah Akad</button>";
+        }else{
+          echo "&nbsp <button class='btn btn-success'><i class='fas fa-folder'></i> File Terunggah</button>&nbsp<button class='btn btn-primary' data-toggle='modal' data-target='#akadModal'><i class='fas fa-fw fa-folder-plus'></i> Unggah Akad</button>";
+        }
       }
+      
+      
       ?>
     </p>
     <p>
@@ -198,7 +205,9 @@
       <div class="modal-body">
         <form action="<?php echo base_url(). 'kelola/update'; ?>" method="post">
           <div class="form-group">
+            <input type="hidden" name="file_akad" value="0">
             <input type="hidden" name="id_pelanggan" value="<?= $d['id_pelanggan']; ?>">
+            <input type="hidden" name="tgl_persetujuan" value="<?= date('Y-m-d');?>">
             <label for="recipient-name" class="col-form-label">Catatan untuk konsumen (<b>Harus diisi</b>):</label>
             <textarea class="form-control" id="message-text" name="catatan_admin" placeholder="Catatan untuk konsumen dari administrator.." style="height: 200px;"><?= $d['catatan_admin']?></textarea>
           </div>
@@ -256,6 +265,42 @@
             <!--lanjutan ada di views/data/modal_asp.php-->
             <?php
             $this->load->view('data/modal_asp');?>
+
+      <!--akadModal-->
+      <div class="modal fade" id="akadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-pencil-alt fa-fw"></i> Unggah Dokumen Akad (Harus Diisi)</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="<?php echo base_url(). 'kelola/update_akad'; ?>" method="post">
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Unggah Akad:</label>
+                  <input type="file" name="file_akad" class="form-control" style="height: 45px;">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Tanggal Akad:</label>
+                  <input type="date" name="tgl_akad" class="form-control" value="<?= date('Y-m-d');?>">
+                </div>
+                <div class="form-group">
+                  <input type="hidden" name="id_pelanggan" value="<?= $d['id_pelanggan']; ?>">
+                  <input type="hidden" name="tgl_persetujuan" value="<?= date('Y-m-d');?>">
+                  <label for="recipient-name" class="col-form-label">Catatan:</label>
+                  <textarea class="form-control" id="message-text" name="catatan_akad" placeholder="Catatan terkait dokumen akad (jika ada)" style="height: 200px;"><?= $d['catatan_akad']?></textarea>
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                  <input type="submit" value="Simpan" class="btn btn-primary"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
 <?php endforeach; ?>
 

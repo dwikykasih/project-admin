@@ -19,6 +19,7 @@
                       <th>Nama Lengkap</th>
                       <th>Barang</th>
                       <th>Tanggal Persetujuan</th>
+                      <th>ASP</th>
                       <th>Status</th>
                       <th>Aksi</th>
                       
@@ -29,6 +30,7 @@
                       <th>Nama Lengkap</th>
                       <th>Barang</th>
                       <th>Tanggal Persetujuan</th>
+                      <th>ASP</th>
                       <th>Status</th>
                       <th>Aksi</th>
 
@@ -42,6 +44,16 @@
                       <td><?= $p['nama'] ?></td>
                       <td><?= $p['barang']; ?></td>
                       <td><?= $p['tgl_persetujuan']; ?></td>
+                      <td>
+                        <?php
+                          $asp = $p['asp'];
+                          if($asp == '0'){
+                            echo "<button class='btn btn-danger btn-block'>ASP Belum Ditentukan</button>";
+                          }else{
+                            echo "<button class='btn btn-success btn-block'>".$asp."</button>";
+                          }
+                        ?>
+                      </td>
                       <td>
                         <?php if($stat == '1'){
                           echo "<button class='btn btn-success btn-block'>Dokumen Disetujui</button>";

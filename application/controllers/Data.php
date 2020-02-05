@@ -39,7 +39,8 @@ class Data extends CI_Controller
         $this->load->view('data/v_riwayat', $data);
     }
     public function tes()
-    {
+    { 
+       
         $this->load->view('templates/v_header');
         $this->load->view('templates/v_sidebar');
         $this->load->view('templates/v_navbar');

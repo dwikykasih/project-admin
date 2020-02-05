@@ -89,4 +89,32 @@ class M_data extends CI_Model
         $this->db->update($table,$data);
     }   
     
+    public function hitungJumlahAsset($table, $stat)
+    {   
+        $query = $this->db->get_where($table, ['status' => $stat]);
+        if($query->num_rows()>0)
+        {
+          return $query->num_rows();
+        }
+        else
+        {
+          return 0;
+        }
+    }
+
+    public function hitungJumlahInventori($sum, $table)
+    {
+       $this->db->select_sum($sum);
+       $query = $this->db->get($table);
+       if($query->num_rows()>0)
+       {
+         return $query->row()->$sum;
+       }
+       else
+       {
+         return 0;
+       }
+    }
+
+
 }
