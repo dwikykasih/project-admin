@@ -8,4 +8,11 @@
 	"require-dev": {
 		"mikey179/vfsStream": "1.1.*"
 	}
+
+}
+{
+  "name" : "html2pdf/codeigniter",
+  "require": {
+    "dompdf/dompdf" : "0.6.*"
+  }
 }

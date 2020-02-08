@@ -125,7 +125,7 @@
         if($asp == '0'){
           echo "";
         }else{
-          echo "&nbsp <button class='btn btn-success'><i class='fas fa-fw fa-user-plus'></i>".$asp."</button>";
+          echo "&nbsp <button class='btn btn-success'><i class='fas fa-fw fa-user-plus'></i> " .$asp."</button>";
         }
         ?>
         <?php
@@ -142,39 +142,48 @@
     	
     </p>
     <p>
-    	<b>&nbsp Buat Akad (Perubahan dilakukan oleh admin)</b><br>
     	<?php
+      $id = $d['id_pelanggan'];
+      $nama = $d['nama'];
       $akad = $d['file_akad'];
       if($asp == '0'){
         echo "&nbsp <button class='btn btn-danger'><i class='fas fa-fw fa-exclamation'></i> ASP Belum Ditentukan</button>";
       }else{
-        if($akad == '0'){
-        echo "&nbsp <button class='btn btn-primary' data-toggle='modal' data-target='#akadModal'><i class='fas fa-fw fa-pencil-alt'></i> Unggah Akad</button>";
-        }else{
-          echo "&nbsp <button class='btn btn-success'><i class='fas fa-folder'></i> File Terunggah</button>&nbsp<button class='btn btn-primary' data-toggle='modal' data-target='#akadModal'><i class='fas fa-fw fa-folder-plus'></i> Unggah Akad</button>";
-        }
-      }
-      
-      
-      ?>
-    </p>
-    <p>
-    	<b>&nbsp Status Transaksi (Perubahan dilakukan oleh ASP)</b><br>
-    	<?php
-      $akad = $d['akad'];
-      $trx = $d['status_trx'];
-      if ($akad == '0'){
-        echo "&nbsp <button class='btn btn-danger'><i class='fas fa-fw fa-exclamation'></i> Dokumen Akad Belum Diunggah</button";
-      }else{
-        if($trx == '0'){
-
-        }
         
+        if($akad == '0'){
+        echo "<form method='post' action='kelola/akad'>
+        <b>&nbsp Ekspor Akad (Hasilkan file Akad)</b><br>
+                <input type='hidden' name='detail_id' value='$id'>
+                <input type='hidden' name='nama' value='$nama'>&nbsp 
+                <button class='btn btn-warning' type='submit'><i class='fas fa-file'></i> Ekspor File PDF</button>
+              </form><br>
+              <b>&nbsp Unggah Akad (Unggah Akad yang telah diekspor)</b><br>
+              &nbsp <button class='btn btn-primary' data-toggle='modal' data-target='#akadModal'><i class='fas fa-upload'></i> Unggah Akad</button>";
+          
+        }else{
+          echo "
+          <b>&nbsp Status Akad</b><br>
+          &nbsp <button class='btn btn-success' title='$akad'><i class='fas fa-check'></i> File Terunggah</button>
+          <span>File: $akad</span>";
+        }
       }
       ?>
+      
     </p>
     <p>
-    	<b>&nbsp Angsuran: </b>
+    	
+      <?php
+        if($akad == '0'){
+          echo "<b>&nbsp Angsuran: </b><br>&nbsp <button class='btn btn-danger'>Akad belum diunggah!</button>";
+        }else{
+          echo "
+          <form method='post' action='kelola/detail_angsuran'>
+          <b>&nbsp Angsuran: </b><br>
+          <input type='hidden' name='detail_id' value='$id'>&nbsp 
+          <button type='submit' class='btn btn-primary'>Lihat Detail Angsuran!</button>
+          </form>";
+        }
+      ?>
     </p>
         <p>
     	<i class="fas fa-user-cog"></i>
@@ -192,7 +201,7 @@
     
 </div>
 
-<!--Modal-->
+<!--StatusDokumenModal-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -247,7 +256,7 @@
   </div>
 </div>
 
-<!--Modal-->
+<!--ASPModal-->
 <div class="modal fade" id="pilihAspModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -266,7 +275,7 @@
             <?php
             $this->load->view('data/modal_asp');?>
 
-      <!--akadModal-->
+<!--akadModal-->
       <div class="modal fade" id="akadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -280,7 +289,7 @@
               <form action="<?php echo base_url(). 'kelola/update_akad'; ?>" method="post">
                 <div class="form-group">
                   <label for="message-text" class="col-form-label">Unggah Akad:</label>
-                  <input type="file" name="file_akad" class="form-control" style="height: 45px;">
+                  <input type="file" name="file_akad" value="0" class="form-control" style="height: 45px;">
                 </div>
                 <div class="form-group">
                   <label for="message-text" class="col-form-label">Tanggal Akad:</label>

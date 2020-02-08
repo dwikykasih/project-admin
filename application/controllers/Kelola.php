@@ -145,4 +145,34 @@ class Kelola extends CI_Controller
         redirect('kelola');
     }
 
+    public function akad(){
+        $this->load->library('dompdf_gen');
+
+        $id = $this->input->post('detail_id');
+        $nama = $this->input->post('nama');
+        $data['akad'] = $this->db->get_where('pengajuan', ['id_pelanggan' => $id])->result_array();
+
+        $this->load->view('templates/akad', $data);
+
+        $paper_size = 'A4';
+        $orientation = 'portrait';
+        $html = $this->output->get_output();
+
+        $this->dompdf->set_paper($paper_size, $orientation);
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        $this->dompdf->stream($nama . "_akad.pdf", array('attachment' => 0));
+    }
+
+    public function detail_angsuran()
+    {
+        $id = $this->input->post('detail_id');
+
+        $data['angsuran'] = $this->db->get_where('angsuran', ['id_pelanggan' => $id])->result_array();
+        $this->load->view('templates/v_header');
+        $this->load->view('templates/v_sidebar');
+        $this->load->view('templates/v_navbar');
+        $this->load->view('data/angsuran', $data);
+    }
+
 }
