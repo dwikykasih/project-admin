@@ -52,7 +52,11 @@
 		<p>Jumlah: <?= $a['jumlah_barang'];?></p>
 		<p>Harga: Rp. <?= $a['harga'];?></p>
 		<p>Melalui Link: <?= $a['link'];?></p>
-		<p>Uang Muka: <?= $a['dp'];?></p>
+		<?php
+			$harga = $a['harga'];
+			$dp = $harga * 0.10;
+		?>
+		<p>Uang Muka: Rp. <?= $dp;?></p>
 		<p>Jangka Waktu: <?= $a['jangka_waktu'];?></p>
 	</div>
 

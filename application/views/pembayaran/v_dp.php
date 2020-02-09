@@ -33,29 +33,44 @@
                     </tr>
                   </tfoot>
                   <tbody>
+                    <?php foreach($uang_muka as $u): ?>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>Sound System</td>
-                      <td>24-02-2012</td>
-                      <td><button class="btn btn-danger">Belum diterima</button></td>
-                      <td><a href=""><button class="btn btn-primary btn-block">Lihat</button></a></td>
+                      <td><?= $u['nama'];?></td>
+                      <td><?= $u['barang'];?></td>
+                      <td><?= $u['tgl_persetujuan'];?></td>
+                      <td>
+                        <?php
+                          $stat = $u['status'];
+                          if($stat == 0){
+                            echo "<button class='btn btn-danger btn-block'>Belum Diterima</button>
+                            ";
+                          }elseif($stat == 1){
+                            echo "<button class='btn btn-success btn-block'>Lunas</button>";
+                          }elseif($stat == 2){
+                            echo "<button class='btn btn-success btn-block'>Diterima</button>";
+                          }else{
+                            echo "<button class='btn btn-danger btn-block'>data tidak valid</button>";
+                          }
+                        ?>
+                      </td>
+                      <td>
+                        <?php
+                          $stat = $u['status'];
+                          $img = $u['file_bukti'];
+                          if($stat == 0){
+                            echo "<button class='btn btn-danger btn-block'>Bukti belum ada</button>";
+                          }elseif($stat == 1){
+                            echo "<a href='/project-admin/assets/img/bukti/$img' target='_blank'><button class='btn btn-primary btn-block'>Lihat</button></a>";
+                          }elseif($stat == 2){
+                            echo "<a href='/project-admin/assets/img/bukti/$img' target='_blank'><button class='btn btn-primary btn-block'>Lihat</button></a>";
+                          }else{
+                            echo "<button class='btn btn-primary btn-block'>Data tidak valid</button>";
+                          }
+                        ?>
+                      </td>
                     </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Helm</td>
-                      <td>17-12-2014</td>
-                      <td><button class="btn btn-success">Sudah diterima</button></td>
-                      <td><a href=""><button class="btn btn-primary btn-block">Lihat</button></a></td>
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Ear buds</td>
-                      <td>21-12-2012</td>
-                      <td><button class="btn btn-success">Sudah diterima</button></td>
-                      <td><a href=""><button class="btn btn-primary btn-block">Lihat</button></a></td>
-                    </tr>
-                    
                   </tbody>
+                <?php endforeach; ?>
                 </table>
               </div>
             </div>

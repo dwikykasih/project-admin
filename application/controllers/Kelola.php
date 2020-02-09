@@ -38,6 +38,24 @@ class Kelola extends CI_Controller
         $this->load->view('kelola/v_kelola_angsuran', $data);
     }
 
+    public function uang_muka()
+    {
+        $data["uang_muka"] = $this->m_data->tampil_uang();
+        $this->load->view('templates/v_header');
+        $this->load->view('templates/v_sidebar');
+        $this->load->view('templates/v_navbar');
+        $this->load->view('pembayaran/v_dp', $data);
+    }
+
+    public function progres_pembayaran()
+    {
+        $data["progres"] = $this->m_data->tampil_uang();
+        $this->load->view('templates/v_header');
+        $this->load->view('templates/v_sidebar');
+        $this->load->view('templates/v_navbar');
+        $this->load->view('pembayaran/v_progres', $data);
+    }
+
     function update()
     {
         $id = $this->input->post('id_pelanggan');
@@ -145,7 +163,8 @@ class Kelola extends CI_Controller
         redirect('kelola');
     }
 
-    public function akad(){
+    public function akad()
+    {
         $this->load->library('dompdf_gen');
 
         $id = $this->input->post('detail_id');
@@ -172,7 +191,7 @@ class Kelola extends CI_Controller
         $this->load->view('templates/v_header');
         $this->load->view('templates/v_sidebar');
         $this->load->view('templates/v_navbar');
-        $this->load->view('data/angsuran', $data);
+        $this->load->view('data/angsur', $data);
     }
 
 }

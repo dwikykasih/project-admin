@@ -1,3 +1,14 @@
+         <?php            
+          $link = mysqli_connect("localhost", "root", "", "angsur");
+           
+          // Check connection
+          if($link === false){
+              die("ERROR: Could not connect. " . mysqli_connect_error());
+          }
+
+?>
+
+
 
 
         <!-- Begin Page Content -->
@@ -34,33 +45,52 @@
                       <th>Aksi</th>
                     </tr>
                   </tfoot>
+                  <?php foreach($progres as $p): ?>
+                    <?php $id = $p['id_pelanggan']; ?>
+                    <?php
+                      $sql = "SELECT * FROM angsuran WHERE status = '2' AND id_pelanggan = $id";
+                      $query = mysqli_query($link, $sql);
+                      $data = array();
+                      while(($row = mysqli_fetch_array($query)) != null){
+                          $data[] = $row;
+                      }
+                      $count = count($data);
+                      $gaps = 1;
+                      $lunas = $count - $gaps;
+
+
+                    ?>
+
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>Sound System</td>
-                      <td>24-02-2012</td>
-                      <td><button class="btn btn-primary btn-block">12</button></td>
-                      <td><button class="btn btn-danger btn-block">Belum membayar DP</button></td>
-                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Detail Progres</button></a></td>
+                      <td><?= $p['nama'];?></td>
+                      <td><?= $p['barang'];?></td>
+                      <td><?= $p['tgl_persetujuan'];?></td>
+                      <td><button class="btn btn-primary btn-block"><?= $p['jangka_waktu'];?></button></td>
+                      <td>
+                        <?php
+                        
+                        $jangka = $p['jangka_waktu'];
+                        if($lunas < 1 && $lunas >= 0){
+                          echo "<button class='btn btn-warning btn-block'>Pembayaran DP</button>";
+                        }elseif($lunas >= 1 && $lunas < $jangka){
+                          echo "<button class='btn btn-warning btn-block'>Proses Angsuran Berjalan</button>";
+                        }elseif($lunas == $jangka){
+                          echo "<button class='btn btn-success btn-block'>Angsuran Selesai</button>";
+                        }else{
+                          echo "<button class='btn btn-danger btn-block'>Belum Membayar DP</button>";;
+                        }
+                        ?>
+                      </td>
+                      <td>
+                        <form method='post' action='<?= base_url('kelola/detail_angsuran');?>'>
+                          <input type='hidden' name='detail_id' value='<?= $id;?>'>&nbsp 
+                          <button type='submit' class='btn btn-primary'>Detail Angsuran</button>
+                        </form>
+                      </td>
                     </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Helm</td>
-                      <td>17-12-2014</td>
-                      <td><button class="btn btn-primary btn-block">6</button></td>
-                      <td><button class="btn btn-success btn-block">Angsuran Selesai</button></td>
-                      <td><a href="<?= base_url('admin/detail_progres');?>"><button class="btn btn-primary btn-block">Detail Progres</button></a></td>
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Ear buds</td>
-                      <td>21-12-2012</td>
-                      <td><button class="btn btn-primary btn-block">8</button></td>
-                      <td><button class="btn btn-primary btn-block">Sedang Berjalan</button></td>
-                      <td><a href="<?= base_url('#');?>"><button class="btn btn-primary btn-block">Detail Progres</button></a></td>
-                    </tr>
-                    
                   </tbody>
+                <?php endforeach;?>
                 </table>
               </div>
             </div>

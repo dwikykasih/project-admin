@@ -47,13 +47,13 @@
                       		}
                       	?>
                       	</td>
-                    <?php endforeach; ?>
+                    
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-
+<?php endforeach; ?>
         </div>
         <!-- /.container-fluid -->
 

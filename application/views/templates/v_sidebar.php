@@ -52,7 +52,7 @@
             <h6 class="collapse-header text-light te">Komponen:</h6>
             <a class="collapse-item text-white" href="<?= base_url('data');?>">Daftar Pelanggan</a>
             <a class="collapse-item text-white" href="<?= base_url('data/daftar_asp');?>">Daftar ASP</a>
-            <a class="collapse-item text-white" href="<?= base_url('data/riwayat')?>">Riwayat Pemesanan</a>
+            <a class="collapse-item text-white" href="<?= base_url('data/riwayat');?>">Riwayat Pemesanan</a>
           </div>
         </div>
       </li>
@@ -66,9 +66,8 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-dark py-2 collapse-inner rounded">
             <h6 class="collapse-header text-light te">Komponen:</h6>
-            <a class="collapse-item text-white" href="<?= base_url('admin/down_payment')?>">Uang Muka</a>
-            <a class="collapse-item text-white" href="<?= base_url('admin/progres')?>">Progres Pembayaran</a>
-            <a class="collapse-item text-white" href="forgot-password.html">Statistik</a>
+            <a class="collapse-item text-white" href="<?= base_url('kelola/uang_muka');?>">Uang Muka</a>
+            <a class="collapse-item text-white" href="<?= base_url('kelola/progres_pembayaran')?>">Progres Pembayaran</a>
           </div>
         </div>
       </li>

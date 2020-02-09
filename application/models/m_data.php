@@ -35,6 +35,15 @@ class M_data extends CI_Model
         return $this->db->get_where('pengajuan', ['status' => 1])->result_array();
     }
 
+    function tampil_uang()
+    {
+        $this->db->order_by("id_angsuran", "desc");
+        $this->db->select('angsuran.*, pengajuan.id_pelanggan AS id_pelanggan, pengajuan.nama, pengajuan.barang, pengajuan.tgl_persetujuan, pengajuan.jangka_waktu');
+        $this->db->join('pengajuan', 'angsuran.id_pelanggan = pengajuan.id_pelanggan');
+        $query = $this->db->get_where('angsuran', ['angsuran_ke' => 0]);
+        return $query->result_array();
+    }
+
     function select_asp()
     {
         $query = $this->db->select('*')->from('pengajuan_asp')->get();

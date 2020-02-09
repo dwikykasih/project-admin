@@ -71,11 +71,24 @@
     </p>
     <p>
         <b>&nbsp Uang Muka</b><br>
-        &nbsp Rp. <?= $d['dp'];?>
+        &nbsp
+        <?php 
+        $h = $d['harga'];
+        $dp = 10/100;
+        $um = $h * $dp;
+
+        echo "Rp. ".$um;
+        ?>
     </p>
     <p>
-        <b>&nbsp Angsuran</b><br>
-        &nbsp <?= $d['angsuran'];?>
+        <b>&nbsp Angsuran (Perbulan)</b><br>
+        &nbsp <?php
+          $jangka = $d['jangka_waktu'];
+          $harga = $d['harga'];
+
+          $angsuran = ($harga * 1.2) / $jangka;
+          echo "Rp. ".$angsuran;
+        ?>
     </p>
     <p>
         <b>&nbsp Margin</b><br>
@@ -173,6 +186,7 @@
     <p>
     	
       <?php
+      $jangka = $d['jangka_waktu'];
         if($akad == '0'){
           echo "<b>&nbsp Angsuran: </b><br>&nbsp <button class='btn btn-danger'>Akad belum diunggah!</button>";
         }else{
@@ -182,6 +196,7 @@
           <input type='hidden' name='detail_id' value='$id'>&nbsp 
           <button type='submit' class='btn btn-primary'>Lihat Detail Angsuran!</button>
           </form>";
+          
         }
       ?>
     </p>

@@ -6,12 +6,12 @@
               die("ERROR: Could not connect. " . mysqli_connect_error());
           }
 
-$query = "SELECT * FROM pengajuan";
+$query = "SELECT * FROM angsuran WHERE status = '2' OR status = '1'";
 $query_run = mysqli_query($link, $query);
 
 $qty= 0;
 while ($num = mysqli_fetch_assoc ($query_run)) {
-    $qty += $num['dp'];
+    $qty += $num['nominal'];
 }
 
 ?>
@@ -19,7 +19,7 @@ while ($num = mysqli_fetch_assoc ($query_run)) {
 <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
-                <a href="#" style="text-decoration: none;">
+                <a href="<?= base_url('kelola/progres_pembayaran');?>" style="text-decoration: none;">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">

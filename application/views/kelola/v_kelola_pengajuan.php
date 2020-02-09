@@ -60,7 +60,7 @@
                         }elseif($stat == '2'){
                           echo "<button class='btn btn-danger btn-block'>Dokumen Ditolak</button>";
                         }else{
-                          echo "<button class='btn btn-primary btn-block'>Dokumen Diverifikasi</button>";
+                          echo "<button class='btn btn-warning btn-block'>Menunggu Persetujuan</button>";
                         }
                         ?>
                         
