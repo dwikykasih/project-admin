@@ -48,8 +48,6 @@
                       </td>
                       
                     <?php endforeach; ?>
-                    <?php $nama=$a['nama'];?>
-                      <?php echo htmlentities($nama);?>
                   </tbody>
                 </table>
               </div>

@@ -12,6 +12,13 @@ class Delete extends CI_Controller{
     
     public function index()
     {
+        $table = 'pengajuan';
+        $this->m_data->hapus();
+     
+    }
+    public function hapus_asp()
+    {
+        $table = 'pengajuan_asp';
         $this->m_data->hapus();
      
     }

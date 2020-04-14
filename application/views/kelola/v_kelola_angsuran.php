@@ -16,7 +16,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>ID Order</th>
+                      <th>ID Pelanggan</th>
                       <th>Barang</th>
                       <th>Tanggal Persetujuan</th>
                       <th>Aksi</th>
@@ -35,7 +35,7 @@
                     <?php foreach ($angsuran as $p): ?>
                       <?php $id = $p['id_pelanggan']; ?>
                     <tr>
-                      <td><?= $p['id_order'] ?></td>
+                      <td><?= $id; ?></td>
                       <td><?= $p['barang']; ?></td>
                       <td><?= $p['tgl_persetujuan']; ?></td>
                       <td>

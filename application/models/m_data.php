@@ -10,7 +10,7 @@ class M_data extends CI_Model
 
     function tampil_angsuran()
     {
-        $this->db->order_by("id_order", "desc");
+        $this->db->order_by("id_pelanggan", "desc");
         return $this->db->get_where('pengajuan', ['status' => 1])->result_array();
     }
 
@@ -87,7 +87,16 @@ class M_data extends CI_Model
     public function hapus()
     {
         $id = $_GET["delete_id"];
-        $this->db->delete('pengajuan', array('id' => $id));
+        $this->db->delete('pengajuan', array('id_pelanggan' => $id));
+        echo "<script>alert('Data berhasil dihapus');</script>";
+        echo "<script>location='kelola';</script>"; 
+     
+    }
+
+    public function hapus_asp()
+    {
+        $id = $_GET["delete_id"];
+        $this->db->delete('pengajuan', array('id_pelanggan' => $id));
         echo "<script>alert('Data berhasil dihapus');</script>";
         echo "<script>location='kelola';</script>"; 
      

@@ -32,23 +32,6 @@
             ?>
           </div>
 
-        <div class="row">
-          <div class="col mb-4">
-            
-            <form method="post" action="<?= base_url('kelola/update_tgl'); ?>">
-              <!--tanggal-->
-              <?php
-              $tgl = date('Y-m-d');?>
-              <input type="hidden" name="tgl_sekarang" value="<?php echo date('Y-m-d');?>">
-              <input type="hidden" name="tgl_awal" value="<?php echo date('Y-m-01', strtotime($tgl));?>">
-              <input type="hidden" name="tgl_akhir" value="<?php echo date('Y-m-t', strtotime($tgl));?>">
-
-              <input type="hidden" name="status" value="1">
-              <button class="btn btn-primary"><i class="fas fa-fw fa-sync"></i> Perbarui Data</button>
-            </form>
-          </div>
-        </div>
-
       </div>
 
   <!-- Scroll to Top Button-->
